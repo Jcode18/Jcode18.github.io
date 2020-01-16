@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>搭建第一个Hexo个人博客</title>
+    <url>/2020/01/16/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>hexo是一款快速、简洁且高效的博客框架。<br>可以理解为容易搭建<br>推荐，适合初次搭建博客，网上关于该博客搭建中遇到问题的解决方案很多。</p>
+<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul>
+<li>操作系统<br>Windows、Linux、macOS皆可</li>
+<li>需要安装的软件<br>Git、Node.js、Hexo</li>
+</ul>
+<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><p>分享我跟着搭建博客的视频链接<a href="https://www.bilibili.com/video/av44544186?from=search&seid=8333895135889660269" target="_blank" rel="noopener">CodeSheep</a>，很不错的教学，跟着做就行。<br>视频中的up主是macOS系统，但具体和Windows系统差别不大，有问题可以参考弹幕。</p>
+<h2 id="个人经验分享"><a href="#个人经验分享" class="headerlink" title="个人经验分享"></a>个人经验分享</h2><p>个人博客的搭建及完善历程如下：<br><strong>1、安装必要软件</strong><br>软件不大、安装也简单<br>花不了多少时间一般10分钟左右<br><strong>2、博客部署到本地</strong><br>成功后博客就算初步搭建完成，但只能本机访问到博客<br>部署顺利的话10分钟左右<br><strong>3、博客部署到github</strong><br>这个是免费的、成功后外网也能访问了<br>部署顺利的话15分钟左右<br><strong>4、博客主题更换及美化</strong><br>主题很多可以网上下载，主题可以参考这个视频链接<a href="https://www.bilibili.com/video/av74851669?from=search&seid=5835927287329667070" target="_blank" rel="noopener">五款主题</a><br>主题的更换以及美化可以花挺多时间的看你想要做到什么程度了<br><strong>5、注册个人域名</strong><br>可以去腾讯云、阿里云购买域名<br><strong>6、个人域名和博客绑定</strong><br>网上也有教学，不难。</p>
+]]></content>
+      <categories>
+        <category>技术类</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>序章</title>
+    <url>/2020/01/16/%E5%BA%8F%E7%AB%A0/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>从0开始搭建博客，到如今着手写第一篇博客，历经了四天的磕磕碰碰。<br>期间出现了不少的问题，深夜探访度娘，浪迹于b站各位大佬的视频。<br>学会了开始去看说明文档，了解了图床、域名等新知识，体验到了拥有博客的小成就感。<br>总的感觉蛮开心的，虽然博客的美化还有不足，自己的文笔也不够优秀，但有了开端，相信以后会越来越好。<br>这篇文章作为第一篇博文，那必须要有其独特之处，一番思考于是决定记录下自己搭建博客的初心、方向、目标。</p>
+<h1 id="初心"><a href="#初心" class="headerlink" title="初心"></a>初心</h1><p><strong>分享、学习、成长。</strong>这三个词，是我的搭建博客的初心。<br><strong>分享中提升，学习中成长。</strong>我们无时无刻都在成长的路上，希望我的博客能够伴你我一同成长。</p>
+<h1 id="方向"><a href="#方向" class="headerlink" title="方向"></a>方向</h1><p>关于博客以后的写作方向暂定如下：<br>1、技术类（java后端、部分前端、其它奇技淫巧？？）<br>2、随笔类（一些生活中的点点滴滴）<br>3、小白类（一些计算机知识科普）</p>
+<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>精于心，简于形。<br><img src="https://i.loli.net/2020/01/16/92Z67Tf8YilpOCk.jpg" alt="TIM图片20200116211751.jpg"></p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>初心</tag>
+        <tag>方向</tag>
+        <tag>目标</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>测试</title>
     <url>/2020/01/14/%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<p>hello 你好！<br><img src="https://i.loli.net/2020/01/14/FXgOr2IjHkTRJQp.png" alt="20200114011309228.png"></p>
