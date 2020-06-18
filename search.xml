@@ -1,6 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Spring框架学习笔记</title>
+    <url>/2020/06/18/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>Spring优势：1、方便解耦，简化开发。2、AOP编程支持。3、声明式事务支持。4、方便程序测试。5、方便集成各种优秀框架。6、降低JAVA EE API的使用难度。7、源码是经典学习范例。</p>
+<p><img src="https://i.loli.net/2020/06/18/6iDxklsZnSCJpTj.png" alt="1.png"></p>
+<p>Bean：在计算机英语中有可重用组件含义。</p>
+<p>JavaBean：用java语言编写的可重用组件。</p>
+<p>控制反转（Inversion of Control）把创建对象的权利交给框架，包括依赖注入（Dependency Injection）和依赖查找（Dependency Lookup）。</p>
+<p>ApplicationContext常用三个实现类：</p>
+<p>ClassPathXmlApplicationContext：可以加载类路径下配置文件。</p>
+<p>FileSystemXmlApplicationContext：可以加载磁盘任意路径下的配置文件（要有访问权）</p>
+<p>AnnotationConfigApplicationContext：用于读取注解创建容器。</p>
+<p>核心容器的两个接口引发出的问题：</p>
+<p>ApplicationContext：在构建核心容器时，创建对象采用的策略是立即加载方式（单例对象适用）</p>
+<p>BeanFactory：在构建核心容器时，创建对象采用的策略是延迟加载方式（多例对象使用）</p>
+<p>创建Bean的三种方式：</p>
+<p>第一种：使用默认函数构造</p>
+<p>在spring中使用bean标签，配置id和class属性后，且没配其它属性和标签时，采用的就是默认函数构建bean对象，如果类中没有默认构造函数，则对象无法创建。</p>
+<p>第二种：使用普通工厂中的方法创建对象（使用某个类的方法创建对象，并存入spring容器）</p>
+<p>第三种:使用工厂中的静态方法创建对象（使用某个类中的静态方法创建对象，并存入spring容器）</p>
+<p>bean的作用范围：</p>
+<p> scope属性：</p>
+<p> singleton 单例（默认值）</p>
+<p> prototype 多例</p>
+<p> request 作用于web应用的请求范围</p>
+<p> session 作用于web应用的会话范围</p>
+<p> global-session 作用于集群环境的会话范围</p>
+<p>bean对象的生命周期：</p>
+<p> 单例：</p>
+<p>出生：容器创建时</p>
+<p>活着：容器在，对象就活着</p>
+<p>死亡：容器销毁，对象消亡</p>
+<p>总结：单例对象的生命周期和容器相同。</p>
+<p> 多例：</p>
+<p>出生：使用对象时spring框架创建</p>
+<p>活着：对象使用过程中，一直活着</p>
+<p>死亡：当对象长时间不用，且没有别的对象引用时，GC回收</p>
+<p>依赖注入：</p>
+<p>能注入的数据，有三类：</p>
+<p>1、基本类型和String</p>
+<p>2、其他bean类型（配置文件或注解配置过的bean）</p>
+<p>3、复杂类型/集合类型</p>
+<p> 注入方式，有三种：</p>
+<p>1、使用构造函数提供</p>
+<p>2、使用set方法提供</p>
+<p>3、使用注解提供</p>
+<p>1、标签中的属性：</p>
+<p>type:用于指定要注入的数据类型</p>
+<p>index:用于指定要注入的数据给构造函数中指定索引位置参数赋值</p>
+<p>name:用于指定给构造函数中指定名称的参数赋值</p>
+<p>value:用于提供基本类型和Sring类型数据</p>
+<p>ref:用于知道你个其他bean类型数据。它指的就是在spring的ioc容器中出现过的bean对象</p>
+<p>2、set方法注入</p>
+<p>涉及的标签：property</p>
+<p>出现的位置：bean标签内部</p>
+<p>标签的属性：</p>
+<p> name：于指定注入时所调用的方法名称</p>
+<p> value：用于提供基本数据类型和String类型的数据</p>
+<p>ref：用于指定其他bean数据，它指的就是在spring的ioc容器中出现过的bean对象</p>
+<p>3、复杂类型的注入/集合注入</p>
+<p>用于给List构集合注入的标签：</p>
+<p> list array set</p>
+<p>用于给Map结构集合注入的标签：</p>
+<p> map props</p>
+<p>注解:</p>
+<p> 注解创建对象：</p>
+<p>@Component：把当前类对象存入spring容器中，属性value指定bean的id</p>
+<p>@Controller：一般用于表现层</p>
+<p>@Service：一般用于业务层</p>
+<p>@Repository：一般用于持久层</p>
+<p> 用于注入数据：</p>
+<p> @Autowired：自动按照类型注入，只要容器中有唯一一个bean对象类型 和要注入的变量类型匹配，就可以成功注入。出现位置可以是成员变量 和方法等。</p>
+<p> @Qualifier：在按照类型注入的基础上，再按照名称注入，它在给类成 注入时不能单独使用，但是在方法参数注入时可以单独使用。</p>
+<p> @Resource：直接按照bean的id注入，可以独立使用。属性name用于 指定bean的id。</p>
+<p> @Value：用于注入基本类型和String类型数据，属性value用于指定数 据的值，可以使用spring的SpEL表达式。</p>
+<p> 用于改变作用范围的：</p>
+<p>@Scope：用于指定bean的作用范围，属性value指定范围的取值，singleton、prototype。</p>
+<p> 和生命周期相关：</p>
+<p> @PreDestroy：指定销毁方法</p>
+<p> @PostConstruct：指定初始化方法</p>
+<p>用于配置：</p>
+<p>@Configuration：指定当前类是一个配置类，细节当配置类作为AnnotationConfigApplicationContext对象创建的参数时，可以不写</p>
+<p> @ComponentScan：用于通过注解指定spring在创建容器是要扫描的包</p>
+<p> @Bean：用于把当前方法的返回值作为bean对象存入spring的ioc容器 属性name用于指定bean的id，不写时默认是方法名</p>
+<p> @Import：导入其它配置类，小配置类导入主配置类，属性value指定其 它配置类的字节码</p>
+<p>@PropertySource：用于指定properties，属性value指定文件名称和<br>路径，关键字classpath表示类路径下</p>
+<p>动态代理：</p>
+<p> 特点：字节码谁用谁创建，谁用谁加载</p>
+<p> 作用：不修改源码的基础上对方法增强</p>
+<p> 分类：基于接口的动态代理、基于子类的动态代理</p>
+<p> 基于接口的动态代理：</p>
+<p> 使用Proxy类中的newProxyInstance方法</p>
+<p> newProxyInstance方法参数：</p>
+<p> ClassLoader：类加载器,用于加载代理对象字节码，和被代理对象使用 相同的类加载器</p>
+<p> Class[]:字节码数组，让代理对象和被代理对象具有相同的方法</p>
+<p> InvocationHandler:用于提供增强的代码，写如何代理，通常都是匿名 内部类</p>
+<p> invoke方法参数：</p>
+<p> proxy：代理对象的引用</p>
+<p> method：当前执行的方法</p>
+<p> args：当前执行方法所需的参数   </p>
+<p> 基于子类的动态代理：</p>
+<p> 使用Enhancer类中的create方法</p>
+<p> Create方法的参数：</p>
+<p> Class：字节码，指定被代理对象的字节码</p>
+<p>Callback：用于增强代码，一般是写该接口的子接口实现类</p>
+<p>MethodInterceptor，通常是匿名内部类</p>
+<p>Intercept方法参数:</p>
+<p> proxy: 代理对象的引用</p>
+<p> method：当前执行的方法</p>
+<p> objects：当前执行方法所需的参数</p>
+<p> methodProxy:当前执行方法的代理对象</p>
+<p>AOP：Aspect Oriented Programming，面向切面编程</p>
+<p>优势：减少重复代码，提高开发效率，方便维护</p>
+<p>术语：</p>
+<p> Joinpoint(连接点)：被拦截到的点，这些点指的是方法</p>
+<p> Pointcut：切入点指我们对哪些Joinpoint进行拦截定义</p>
+<p> Advice(通知/增强)：通知是指拦截到Joinpoint之后所要做的事情，前置 通知，后置通知，异常通知，最终通知，环绕通知</p>
+<p> Target(目标对象)：代理的目标对象</p>
+<p> Weaving(织入)：把增强应用到目标对象来创建新的代理对象的过程</p>
+<p> Proxy(代理):一个类被AOP织入增强后，就参生一个结果代理类</p>
+<p> Aspect(切面)：是切入点和通知的结合</p>
+<p>Spring中基于xml的AOP配置：</p>
+<p>1、把通知bean交给spring管理</p>
+<p>2、使用aop：config标签表明开始aop配置</p>
+<p>3、使用aop：aspect标签表明配置切面</p>
+<p>id属性：是给切面提供一个唯一表示</p>
+<p>ref属性：是指定通知类bean的id</p>
+<p>4、在aop：aspect标签内部使用对应标签来配置通知类型</p>
+<p>method属性：用于指定通知方法</p>
+<p>pointcut属性：用于指定切入点表达式，该表达式的含义指的是业务层中哪  些方法被增强</p>
+<p>切入点表示式写法：</p>
+<p> 关键字：execution</p>
+<p> 表达式：</p>
+<p> 访问修饰符 返回值 包名.包名.包名…类名.方法名(参数列表)</p>
+<p> 全通配写法：</p>
+<p><em>**..</em>.*(..)<br>前两个星号中间有空格</p>
+<p>Spring中基于xml的声明式事务控制配置步骤</p>
+<ol>
+<li><p>配置事务管理器</p>
+</li>
+<li><p>配置事务的通知</p>
+</li>
+</ol>
+<p>使用标签配置事务通知</p>
+<p>属性：</p>
+<p>id：给事务通知起一个唯一标识</p>
+<p>transaction-manager：给事务通知提供一个事务管理器的引用</p>
+<p>3．配置AOP中的通用切入点表达式</p>
+<p>4.简历事务通知和切入点表达式的对应关系</p>
+<p>5.配置事务的属性</p>
+<p> 在标签内部</p>
+<p> 属性：</p>
+<p> isolation：指定事务的隔离级别，默认是DEFAULT,表示数据库隔离级别</p>
+<p> propagation：指定事务传播行为，默认是REQUIRED,增删改的选择，查询方 法可以选择SUPPORTS</p>
+<p> read-only：指定事务是否只读，只有查询方法才能设置true，默认值false 表示读写</p>
+<p> timeout：指定事务超时时间，默认是-1，表示永不超时，单位是秒</p>
+<p> rollback-for：指定一个异常，产生该异常时，事务回滚。产生其它异常时， 事务不回滚。没有默认值，表示任何异常都回滚</p>
+<p> no-rollback-for：指定一个异常，产生该异常时，事务不回滚。产生其它 异常时，事务回滚。没有默认值，表示任何异常都回滚。</p>
+<p> 注解：</p>
+<p>@Transactional：开启事务注解</p>
+<p>@EnableTransactionManagemet：开启配置类事务注解支持</p>
+]]></content>
+      <tags>
+        <tag>笔记</tag>
+        <tag>JAVA</tag>
+        <tag>框架</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA多线程笔记</title>
     <url>/2020/06/18/JAVA%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>线程的生命周期：</p>
@@ -60,8 +228,8 @@
 ]]></content>
       <tags>
         <tag>基础</tag>
-        <tag>JAVA</tag>
         <tag>笔记</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -183,8 +351,8 @@
 ]]></content>
       <tags>
         <tag>基础</tag>
-        <tag>JAVA</tag>
         <tag>笔记</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
