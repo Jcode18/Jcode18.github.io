@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JAVA多线程笔记</title>
+    <url>/2020/06/18/JAVA%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>线程的生命周期：</p>
+<p><img src="https://i.loli.net/2020/06/18/2KfBTbIHuWpYMA5.png" alt="1.png"></p>
+<p>（new）新建（start）–&gt;就绪&lt;–(sleep时间到)阻塞&lt;–(sleep,suspend)运行(stop,执行完)–&gt;死亡。</p>
+<p>Object和Condition休眠唤醒：</p>
+<p>Object：wait()和notify()必须在synchronized（同步锁）下使用</p>
+<p>Condition：await()和signal()必须在Lock（互斥锁/共享锁）配合使用</p>
+<p>线程通讯：</p>
+<p>CountDownLatch：1个线程等待多个线程执行完毕后再执行（教练等待3个运动员做好准备）</p>
+<p>CyclicBarrier：多个线程等待到同一状态后，在同一时刻一起执行（3人同时起跑）</p>
+<p>Semaphore：用于控制对某组资源的访问（8人使用3台机器）</p>
+<p><img src="https://i.loli.net/2020/06/18/wNyma1ovBCAPcHu.png" alt="2.png"></p>
+<p>JAVA内存模型：</p>
+<p><img src="https://i.loli.net/2020/06/18/h59AIf8cyzj6eZK.png" alt="3.png"></p>
+<p><img src="https://i.loli.net/2020/06/18/MI7PukYXl4WvVGh.png" alt="4.png"></p>
+<p>JAVA栈：</p>
+<p>每个线程会对应一个JAVA栈</p>
+<p>每个JAVA栈由若干个栈帧组成</p>
+<p>每个方法对应一个栈帧</p>
+<p>线程请求的栈深度大于虚拟机所允许的深度时，将抛出StackOverflowError</p>
+<p>栈扩展时无法申请到足够的内存，就会抛出OutOfMemoryError异常</p>
+<p>栈顶的栈帧为活动栈，表示当前执行的方法</p>
+<p>方法区：</p>
+<p>方法区是Java堆的永久区</p>
+<p>方法去存放要加载的类信息、类中的静态常量、定义为final的常量、类中field信息、类中方法信息</p>
+<p>方法去是被java线程共享的</p>
+<p>常量池：</p>
+<p>是方法区的一部分</p>
+<p>常量池存放两类数据：字面量（字符串，final变量）和引用量（类/接口、方法和字段名称）</p>
+<p>多线程特型：原子性、可见性、有序性</p>
+<p>ThreadLocal、CAS</p>
+<p>CAS存在ABA问题</p>
+<p>锁：</p>
+<p>不可重入锁：线程请求它已经拥有的锁时会阻塞</p>
+<p>可重入锁：线程可以进入它已经拥有的锁的同步代码块（ReentrantLock）</p>
+<p>读写锁：可以同时读，读的时候不能写。不能同时写，写的时候不能读(ReentrantReadWriteLock)</p>
+<p>Volatile关键字：</p>
+<p>状态量标记</p>
+<p>双重校验</p>
+<p>同步类容器（线程安全）</p>
+<p>Vector、Stack、HashTable（类似HashMap）</p>
+<p>Collections类是一个工具类，不同于Collection接口，提供了静态工厂方法来创建同步容器类。</p>
+<p>并发容器（线程安全）</p>
+<p>ConcurrentHashMap：对应非并发容器：HashMap</p>
+<p>CopyOnWriteArraylist：对应非并发容器：ArrayList</p>
+<p>CopyOnWriteArraySet：对应非并发容器：HashSet</p>
+<p>ConcurrentSkiptMap;对应非并发容器：TreeMap</p>
+<p>ConcurrentSkiptSet: 对应非并发容器：TreeSet</p>
+<p>ConcurrentLinkQueue: 对应非并发容器：Queue</p>
+<p>线程池：</p>
+<p>Executors工具类</p>
+<p>newCacheThreadPool</p>
+<p>newFixedThreadPool</p>
+<p>newSingleThreadExecutor</p>
+<p>newScheduleThreadPool</p>
+]]></content>
+      <tags>
+        <tag>基础</tag>
+        <tag>JAVA</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA基础笔记</title>
     <url>/2020/06/12/JAVA%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>面向对象是向现实世界模型的自然延伸，这是一种“万物皆对象”的编程思想。在现实生活中的任何物体都可以归为一类事物，而每一个个体都是一类事物的实例。</p>
