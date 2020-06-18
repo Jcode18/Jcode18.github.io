@@ -162,9 +162,12 @@
 <p>@Transactional：开启事务注解</p>
 <p>@EnableTransactionManagemet：开启配置类事务注解支持</p>
 ]]></content>
+      <categories>
+        <category>技术类</category>
+      </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>JAVA</tag>
+        <tag>笔记</tag>
         <tag>框架</tag>
       </tags>
   </entry>
@@ -226,10 +229,13 @@
 <p>newSingleThreadExecutor</p>
 <p>newScheduleThreadPool</p>
 ]]></content>
+      <categories>
+        <category>技术类</category>
+      </categories>
       <tags>
         <tag>基础</tag>
-        <tag>笔记</tag>
         <tag>JAVA</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -349,10 +355,13 @@
 <p>4、 以上类型的数组</p>
 <p>定义的属性，在使用时需要给属性赋值（加了default除外）</p>
 ]]></content>
+      <categories>
+        <category>技术类</category>
+      </categories>
       <tags>
         <tag>基础</tag>
-        <tag>笔记</tag>
         <tag>JAVA</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
