@@ -1,6 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Redis学习笔记（待续）</title>
+    <url>/2020/06/26/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BE%85%E7%BB%AD%EF%BC%89/</url>
+    <content><![CDATA[<p>NoSQL（Not Only SQL）不仅仅是SQL，泛指非关系型数据库。</p>
+<p>NoSQL不依赖业务逻辑方式存储，而是以简单的key-value模式存储，因此大大增加了数据库的扩展能力</p>
+<p>不遵循SQL标准</p>
+<p>不支持ACID</p>
+<p>远超于SQL的性能</p>
+<p>NoSQL适用场景：对数据高并发的读写，海量数据的读写，对数据高可扩展性的。</p>
+<p>Redis没有用户，所有访问的密码都一样。     </p>
+<p>Redis数据类型</p>
+<p>1． String</p>
+<p>String类型是二进制安全的。意味着Redis的string可以包含任何数据，比如jpg图片序列化的对象</p>
+<p>String类型是Redis的最基本的数据类型，一个Redis中文字符串value最多可以是512M</p>
+<p>2． set</p>
+<p>set是可以自动排重的，当需要存储一个列表数据，又不希望出现重复数据时，set是一个很好的选择</p>
+<p>Redis的set是string类型的无序集合，底层是一个value为null的hash表，所以添加删除查找的复杂度都是O(1)</p>
+<p>3． List</p>
+<p>单键多值</p>
+<p>Redis列表是简单的字符串列表，按照插入顺序排序，可以添加元素到列表的左边或右边</p>
+<p>底层实际是个双向链表，对两端的操作性能很高，通过索引下标操作中间的节点性能会较差</p>
+<p>4． Hash</p>
+<p>Redis的hash是一个键值对集合</p>
+<p>Redis的hash是一个string类型的field和value的映射表，特别适合用于存储对象</p>
+<p>类似Java的Map[String,String]</p>
+<p>5． Zest</p>
+<p>Redis有序集合zset与普通集合set非常相似，是一个没有重复元素的字符串集合。不同之处是有序集合的每一个成员都关联了一个评分，这个评分被用来按照从最低分到最高分的方式排序集合中的成员，集合的成员是唯一的，但是评分可以重复。</p>
+<p>因为元素有序，可以根据评分来获取一个范围的元素，访问有序集合的中间元素也非常快。</p>
+<p>指令：</p>
+<p>String</p>
+<p> get [key]    查询对应键的值</p>
+<p> set [key] [value]    添加键值对</p>
+<p> append [key] [value]    将给定的[value]追加到原值的末尾</p>
+<p> strlen [key]  或得值的长度</p>
+<p> setnx [key] [value]  只有在key不存在时设置key的值</p>
+<p> incr [key]  将key中存储的数字值增1  如果为空新增值为1</p>
+<p> dect [key]   将key中存储的数字值减1</p>
+<p>如果为空，新增值为-1</p>
+<p> incrby/decrby [key]   将key中存储的数字值增减，自定义步长</p>
+<p> mset [key1] [value1] [keyn] [valuen]   同时设置一个或多个键值对</p>
+<p> mget [key1][keyn] 同时获取一个或多个value</p>
+<p>msetnx [key1] [value1] [keyn] [valuen] 同时设置一个或多个键值对当且仅当key都不存在</p>
+<p>getrange [key] [begin] [end] 获取值的范围</p>
+<p>setrang [key] [begin] [value] 用value覆写[key]所存储的字符串值，从[begin]开始</p>
+<p>setex [key] [过期时间] [value] 设置键值的同时，设置过期时间</p>
+<p>getset [key] [value] 以旧换新，设置新值的同时获取旧值</p>
+<p>List</p>
+<p> lpush/rpush [key] [value] [keyn][valuen] 从左边/右边插入一个或多个值</p>
+<p> lpop/rpop [key] 从左边/右边吐出一个值</p>
+<p> rpoplpush [key1][key2] 从[key1]列表右边吐出一个值，  插到[key2]的右边</p>
+<p> lrange [key][start][stop] 按照索引下标获得元素（左到   右）</p>
+<p> lindex [key][index] 按照索引下标获得元素</p>
+<p> llen [key] 获得列表长度</p>
+<p> linsert [key] after [value] [newvalue] 在[value]的后面插入[new~]</p>
+<p> lrem   [key] [n] [value] 从左边删除n个value(左到右)</p>
+<p>Set</p>
+<p> sadd [key] [value][valuen]  将一个或多个member元素加  入到集合key当中</p>
+<p> smembers [key]  取出该集合的所有值</p>
+<p> sismember [key] [value] 判断集合[key]是否含有该  [value]值，有返回1没有返回0</p>
+<p> scard [key] 返回该集合的元素个数</p>
+<p> srem [key] [value] [valuen] 删除集合中的某些元素</p>
+<p> spop [key] 随机从该集合吐出一个值，删除</p>
+<p> sranmember [key] [n] 随机从该集合取出n个值，不会  删除</p>
+<p> sinter [key1] [key2] 返回两个集合的交集元素</p>
+<p> sunion [key1] [key2] 返回两个集合的并集元素</p>
+<p> sdiff [key1] [key2] 返回两个集合的差集元素</p>
+<p>Hash</p>
+<p> hset [key] [field] [value] 给[key]集合中的[field]键赋值  [value]</p>
+<p> hget [key1] [field] 从[key]集合[field]取出[value]</p>
+<p>hmset [key] [field] [value] [fieldn] [valuen] 批量设置hash的值</p>
+<p> hexists key [field] 查看哈希表key中给定域  field是否存在</p>
+<p> hvals [key] 列出该hash集合所有value</p>
+<p> hincrby [key] [field] [increment] 为哈希表key中的域field   值加上增量increment</p>
+<p> hsetnx [key] [field] [value] 将哈希表key中的域field  的值设置为value，当且仅  field不存在</p>
+<p> hgetall [key] 获得key中所有的键值对</p>
+<p>Zset</p>
+<p> zadd [key] [score1] [value1] [~] 将一个或多个member元  元素及其score值加入到有 集key中</p>
+<p> zrange [key] [start] [stop] [WITHSCORES]                   </p>
+<p>返回有序集key中下标在[start][stop]之间的元素带WITHSCORES可以让分分数和值一起返回到结果集</p>
+<p>zrangebyscore key min max [withscores] [limit offset count]</p>
+<p>返回有序集key中，所有score值介于min和max之间包括等于min或max的成员，有序集成员按score值递增（从小到大）次序排列</p>
+<p>zrevrangebyscore key max min [withscores] [limit offset count]</p>
+<p>同上改为从大到小排列</p>
+<p>zincrby [key] [increment] [value]  为元素的score加上增量</p>
+<p>zrem [key] [value] 删除该集合下，指定元素</p>
+<p>zcount [key] [min] [max] 统计该集合，分数区间内的  元素个数</p>
+<p>zrank [key] [value] 返回该值在集合中的排名  从0开始</p>
+]]></content>
+      <categories>
+        <category>技术类</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>NoSQL</tag>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构笔记（待续）</title>
+    <url>/2020/06/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>程序=数据结构+算法</p>
+<p>数据结构是算法的基础</p>
+<p>数据结构包括：线性结构和非线性结构</p>
+<p>线性结构：</p>
+<p>1． 线性结构作为最常用的数据结构，特点是数据元素之间存在一对一的线性关系</p>
+<p>2． 线性结构有两种不同的存储结构，即顺序存储结构和链式存储结构，顺序存储的线性表称为顺序表，顺序表中的存储元素是连续的</p>
+<p>3． 链式存储的线性表称为链表，链表存储的元素不一定连续，元素节点存放数据元素以及相邻元素的地址信息。</p>
+<p>4． 线性结构常见的有：数组，队列，链表，栈</p>
+<p>非线性结构：</p>
+<p> 非线性包括：二维数组，多维数组，广义表 ，树结构，图结构</p>
+<p>稀疏数组&lt;-&gt;二维数组</p>
+<p>队列：</p>
+<p> 队列是一个有序表，可以用数组或是链表实现</p>
+<p> 遵循先进先出原则，先存入的数据，先取出</p>
+<p>链表：</p>
+<p>1． 链表是以节点的方式来存储，是链式存储</p>
+<p>2． 每个节点包含data域，next域，指向下一个节点</p>
+<p>3． 链表的各个节点不一定是连续存储</p>
+<p>4． 链表分带头结点的链表和没有头结点的链表</p>
+<p>栈：</p>
+<p>1． 栈的英文为stack</p>
+<p>2． 栈是一个先入后出的有序列表</p>
+<p>3． 栈允许变换的一端，称为栈顶top，另一端为固定一端，称为栈底bottom</p>
+<p>4． 出栈噗pop，入栈push</p>
+<p>排序算法：</p>
+<p> 内部排序：</p>
+<p>1． 直接插入排序</p>
+<p>2． 希尔排序</p>
+<p>3． 简单选择排序</p>
+<p>4． 堆排序</p>
+<p>5． 冒泡排序</p>
+<p>6． 快速排序</p>
+<p>7． 归并排序</p>
+<p>8． 基数排序</p>
+<p>外部排序：</p>
+<p>时间复杂度：</p>
+<p> 时间频度：一个算法中语句的执行次数称为语句频度或时间频度记为T(n)</p>
+<p>一般情况下算法中的基本操作语句的重复执行次数是问题规模n的某个函数，用T(n)表示，若有某个辅助函数f(n)，使得当n趋于无穷大时，T(n)/f(n)的极限值为不等于零的常数，则称f(n)是T(n)的同数量级函数。记作T(n)=O(f(n)),称O(f(n))为算法的渐进时间复杂度，简称时间复杂度。</p>
+<p>计算时间复杂度的方法：</p>
+<p>1． 用常数1代替运行时间中的所有加法常数</p>
+<p>2． 修改后的运行次数函数中，只保留最高阶</p>
+<p>3． 去除最高阶的系数</p>
+<p>常见的时间算法复杂度由小到大依次为：O(1)2 n)2 n)2) k)n)</p>
+<p>归并排序：利用归并的思想实现排序方法，该算法采用经典的分治策略</p>
+<p>基数排序（桶排序）：</p>
+<p>radix sort属于分配式排序又称桶子法</p>
+<p> 基数排序是属于稳定的排序，基数排序是效率高的稳定性排序法</p>
+<p> 基数排序是桶排序的扩展</p>
+<p> 排序负数，需优化</p>
+<p><img src="https://i.loli.net/2020/06/26/hHfgeBP6uiT9x8Z.png" alt="1.png"></p>
+<p>查找算法：常用的有四种</p>
+<p>1． 顺序（线性）查找</p>
+<p>2． 二分查找/折半查找</p>
+<p>3． 插值查找：数据量大，分布均匀采用插值查找，速度较快</p>
+<p>4． 斐波那契查找</p>
+<p>哈希表：也叫散列表，是根据关键码值而进行数据访问的数据结构，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度，这个映射函数叫做散列函数，存放记录的数组叫做散列表。</p>
+]]></content>
+      <categories>
+        <category>技术类</category>
+      </categories>
+      <tags>
+        <tag>基础</tag>
+        <tag>笔记</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Spring框架学习笔记</title>
     <url>/2020/06/18/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>Spring优势：1、方便解耦，简化开发。2、AOP编程支持。3、声明式事务支持。4、方便程序测试。5、方便集成各种优秀框架。6、降低JAVA EE API的使用难度。7、源码是经典学习范例。</p>

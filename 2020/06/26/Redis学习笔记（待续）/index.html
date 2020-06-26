@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="笔记,NoSQL,Redis," />
 
 
 
@@ -86,11 +86,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/index.html">
+<meta name="description" content="NoSQL（Not Only SQL）不仅仅是SQL，泛指非关系型数据库。 NoSQL不依赖业务逻辑方式存储，而是以简单的key-value模式存储，因此大大增加了数据库的扩展能力 不遵循SQL标准 不支持ACID 远超于SQL的性能 NoSQL适用场景：对数据高并发的读写，海量数据的读写，对数据高可扩展性的。 Redis没有用户，所有访问的密码都一样。      Redis数据类型 1． Str">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis学习笔记（待续）">
+<meta property="og:url" content="http://yoursite.com/2020/06/26/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BE%85%E7%BB%AD%EF%BC%89/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="NoSQL（Not Only SQL）不仅仅是SQL，泛指非关系型数据库。 NoSQL不依赖业务逻辑方式存储，而是以简单的key-value模式存储，因此大大增加了数据库的扩展能力 不遵循SQL标准 不支持ACID 远超于SQL的性能 NoSQL适用场景：对数据高并发的读写，海量数据的读写，对数据高可扩展性的。 Redis没有用户，所有访问的密码都一样。      Redis数据类型 1． Str">
+<meta property="article:published_time" content="2020-06-26T13:22:05.000Z">
+<meta property="article:modified_time" content="2020-06-26T13:28:13.608Z">
 <meta property="article:author" content="Jcode18">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="NoSQL">
+<meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
 
 
@@ -121,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/笔记/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/06/26/Redis学习笔记（待续）/"/>
 
 
 
 
 
-  <title>标签: 笔记 | Blog</title>
+  <title>Redis学习笔记（待续） | Blog</title>
   
 
 
@@ -146,7 +153,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/Jcode18" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -275,166 +282,370 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>笔记<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/26/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BE%85%E7%BB%AD%EF%BC%89/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jcode18">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/06/26/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BE%85%E7%BB%AD%EF%BC%89/" itemprop="url">
-              
-                <span itemprop="name">Redis学习笔记（待续）</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Redis学习笔记（待续）</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-06-26T21:22:05+08:00"
-              content="2020-06-26" >
-          06-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-26T21:22:05+08:00">
+                2020-06-26
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB/" itemprop="url" rel="index">
+                    <span itemprop="name">技术类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/26/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BE%85%E7%BB%AD%EF%BC%89/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/26/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BE%85%E7%BB%AD%EF%BC%89/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/06/26/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BE%85%E7%BB%AD%EF%BC%89/" class="leancloud_visitors" data-flag-title="Redis学习笔记（待续）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/06/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">
-              
-                <span itemprop="name">数据结构笔记（待续）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-06-26T21:18:05+08:00"
-              content="2020-06-26" >
-          06-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/06/18/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">
-              
-                <span itemprop="name">Spring框架学习笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-06-18T11:06:58+08:00"
-              content="2020-06-18" >
-          06-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/06/18/JAVA%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="url">
-              
-                <span itemprop="name">JAVA多线程笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-06-18T10:56:33+08:00"
-              content="2020-06-18" >
-          06-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/06/12/JAVA%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" itemprop="url">
-              
-                <span itemprop="name">JAVA基础笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-06-12T18:55:50+08:00"
-              content="2020-06-12" >
-          06-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>NoSQL（Not Only SQL）不仅仅是SQL，泛指非关系型数据库。</p>
+<p>NoSQL不依赖业务逻辑方式存储，而是以简单的key-value模式存储，因此大大增加了数据库的扩展能力</p>
+<p>不遵循SQL标准</p>
+<p>不支持ACID</p>
+<p>远超于SQL的性能</p>
+<p>NoSQL适用场景：对数据高并发的读写，海量数据的读写，对数据高可扩展性的。</p>
+<p>Redis没有用户，所有访问的密码都一样。     </p>
+<p>Redis数据类型</p>
+<p>1． String</p>
+<p>String类型是二进制安全的。意味着Redis的string可以包含任何数据，比如jpg图片序列化的对象</p>
+<p>String类型是Redis的最基本的数据类型，一个Redis中文字符串value最多可以是512M</p>
+<p>2． set</p>
+<p>set是可以自动排重的，当需要存储一个列表数据，又不希望出现重复数据时，set是一个很好的选择</p>
+<p>Redis的set是string类型的无序集合，底层是一个value为null的hash表，所以添加删除查找的复杂度都是O(1)</p>
+<p>3． List</p>
+<p>单键多值</p>
+<p>Redis列表是简单的字符串列表，按照插入顺序排序，可以添加元素到列表的左边或右边</p>
+<p>底层实际是个双向链表，对两端的操作性能很高，通过索引下标操作中间的节点性能会较差</p>
+<p>4． Hash</p>
+<p>Redis的hash是一个键值对集合</p>
+<p>Redis的hash是一个string类型的field和value的映射表，特别适合用于存储对象</p>
+<p>类似Java的Map[String,String]</p>
+<p>5． Zest</p>
+<p>Redis有序集合zset与普通集合set非常相似，是一个没有重复元素的字符串集合。不同之处是有序集合的每一个成员都关联了一个评分，这个评分被用来按照从最低分到最高分的方式排序集合中的成员，集合的成员是唯一的，但是评分可以重复。</p>
+<p>因为元素有序，可以根据评分来获取一个范围的元素，访问有序集合的中间元素也非常快。</p>
+<p>指令：</p>
+<p>String</p>
+<p> get [key]    查询对应键的值</p>
+<p> set [key] [value]    添加键值对</p>
+<p> append [key] [value]    将给定的[value]追加到原值的末尾</p>
+<p> strlen [key]  或得值的长度</p>
+<p> setnx [key] [value]  只有在key不存在时设置key的值</p>
+<p> incr [key]  将key中存储的数字值增1  如果为空新增值为1</p>
+<p> dect [key]   将key中存储的数字值减1</p>
+<p>如果为空，新增值为-1</p>
+<p> incrby/decrby [key]   将key中存储的数字值增减，自定义步长</p>
+<p> mset [key1] [value1] [keyn] [valuen]   同时设置一个或多个键值对</p>
+<p> mget [key1][keyn] 同时获取一个或多个value</p>
+<p>msetnx [key1] [value1] [keyn] [valuen] 同时设置一个或多个键值对当且仅当key都不存在</p>
+<p>getrange [key] [begin] [end] 获取值的范围</p>
+<p>setrang [key] [begin] [value] 用value覆写[key]所存储的字符串值，从[begin]开始</p>
+<p>setex [key] [过期时间] [value] 设置键值的同时，设置过期时间</p>
+<p>getset [key] [value] 以旧换新，设置新值的同时获取旧值</p>
+<p>List</p>
+<p> lpush/rpush [key] [value] [keyn][valuen] 从左边/右边插入一个或多个值</p>
+<p> lpop/rpop [key] 从左边/右边吐出一个值</p>
+<p> rpoplpush [key1][key2] 从[key1]列表右边吐出一个值，  插到[key2]的右边</p>
+<p> lrange [key][start][stop] 按照索引下标获得元素（左到   右）</p>
+<p> lindex [key][index] 按照索引下标获得元素</p>
+<p> llen [key] 获得列表长度</p>
+<p> linsert [key] after [value] [newvalue] 在[value]的后面插入[new~]</p>
+<p> lrem   [key] [n] [value] 从左边删除n个value(左到右)</p>
+<p>Set</p>
+<p> sadd [key] [value][valuen]  将一个或多个member元素加  入到集合key当中</p>
+<p> smembers [key]  取出该集合的所有值</p>
+<p> sismember [key] [value] 判断集合[key]是否含有该  [value]值，有返回1没有返回0</p>
+<p> scard [key] 返回该集合的元素个数</p>
+<p> srem [key] [value] [valuen] 删除集合中的某些元素</p>
+<p> spop [key] 随机从该集合吐出一个值，删除</p>
+<p> sranmember [key] [n] 随机从该集合取出n个值，不会  删除</p>
+<p> sinter [key1] [key2] 返回两个集合的交集元素</p>
+<p> sunion [key1] [key2] 返回两个集合的并集元素</p>
+<p> sdiff [key1] [key2] 返回两个集合的差集元素</p>
+<p>Hash</p>
+<p> hset [key] [field] [value] 给[key]集合中的[field]键赋值  [value]</p>
+<p> hget [key1] [field] 从[key]集合[field]取出[value]</p>
+<p>hmset [key] [field] [value] [fieldn] [valuen] 批量设置hash的值</p>
+<p> hexists key [field] 查看哈希表key中给定域  field是否存在</p>
+<p> hvals [key] 列出该hash集合所有value</p>
+<p> hincrby [key] [field] [increment] 为哈希表key中的域field   值加上增量increment</p>
+<p> hsetnx [key] [field] [value] 将哈希表key中的域field  的值设置为value，当且仅  field不存在</p>
+<p> hgetall [key] 获得key中所有的键值对</p>
+<p>Zset</p>
+<p> zadd [key] [score1] [value1] [~] 将一个或多个member元  元素及其score值加入到有 集key中</p>
+<p> zrange [key] [start] [stop] [WITHSCORES]                   </p>
+<p>返回有序集key中下标在[start][stop]之间的元素带WITHSCORES可以让分分数和值一起返回到结果集</p>
+<p>zrangebyscore key min max [withscores] [limit offset count]</p>
+<p>返回有序集key中，所有score值介于min和max之间包括等于min或max的成员，有序集成员按score值递增（从小到大）次序排列</p>
+<p>zrevrangebyscore key max min [withscores] [limit offset count]</p>
+<p>同上改为从大到小排列</p>
+<p>zincrby [key] [increment] [value]  为元素的score加上增量</p>
+<p>zrem [key] [value] 删除该集合下，指定元素</p>
+<p>zcount [key] [min] [max] 统计该集合，分数区间内的  元素个数</p>
+<p>zrank [key] [value] 返回该值在集合中的排名  从0开始</p>
 
       
     </div>
+    
+    
+    
+	
+	<div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:15px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+	
 
+    
+	
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/thank.jpg" alt="Jcode18 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/NoSQL/" rel="tag"><i class="fa fa-tag"></i> NoSQL</a>
+          
+            <a href="/tags/Redis/" rel="tag"><i class="fa fa-tag"></i> Redis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="数据结构笔记（待续）">
+                <i class="fa fa-chevron-left"></i> 数据结构笔记（待续）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -442,6 +653,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -692,6 +910,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
