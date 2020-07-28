@@ -1,7 +1,451 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Redis学习笔记（待续）</title>
+    <title>2020.7.26随笔</title>
+    <url>/2020/07/27/2020.7.26%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<p>2020.7.26，在回厦门的路上。</p>
+<p>周五晚我回了德化，因为村里通知要去兵检，刚好来厦门找工作也快二个月了，想回家一趟。</p>
+<p>本来想着就当作免费体检走一趟，到了家后，家人灌输了一波思想，第二天早上去体检，又动员了一波思想。大学生入伍2年16w，考公加分，优先入伍等各项优惠政策。我心动了，当兵真香。</p>
+<p>体检下来，咳咳体重好尴尬，然后O型腿，视力是硬伤4.0，其它都没大问题。了解的越多也就越知道自己离入伍的差距。其它几个小问题，视力这关我是过不了了。很可惜，我的参军梦，一晚就结束了。</p>
+<p>每个热血男儿都有着参军梦，一日为兵，终身无悔。我爸常常和我说，他以前梦想就是去当兵。很可惜，我也无缘当兵。</p>
+<p>不过，回来还是有些收获，给自己定了几个小目标。</p>
+<p>1，参军有一吸引我的地方就是强身健体，虽然去不了，但是强身健体还是有办法的，明天晚上坚持健身，一周至少一次5km长跑。</p>
+<p>2，这次体检的体重，又刺激到我了，咳咳，加餐加餐，早餐必须吃，中午加一餐，晚上夜宵也得安排上，吃和练一起，增肌增重。</p>
+<p>3，体态方面，O型腿打算花二个月的时间来矫正，驼背enmmm老对手了，二个月也一起解决ta。</p>
+<p>愿持之以恒</p>
+<hr>
+<hr>
+<hr>
+<p>写在最后，如果你能看到的话，这些话写给你秋燕。</p>
+<p>这几天看了一篇小伙伴的考验知乎文章，加上自己初入社会的经历，蛮有感触的。越努力，越幸运。</p>
+<p>你的大学还有1年的时间，不管是考研，考公，工作我都觉得是可行的。当然，现在就得开始准备了。如今奋斗的你，必然给未来的你带来更好的生活。</p>
+<p>至于我们之间，彼此都向前看，前进吧。画上一个不完美但却很珍贵的句号，然后去新的一段启航。</p>
+<p>重点还是前两段话，真的好好加油！</p>
+]]></content>
+      <categories>
+        <category>随笔类</category>
+      </categories>
+      <tags>
+        <tag>徐</tag>
+        <tag>梦想</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java Web基础</title>
+    <url>/2020/06/28/Java-Web%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<p>软件架构：B/S（浏览器/服务器端）、C/S（客户端/服务器端） </p>
+<p>资源分类： 静态资源（所有用户访问后，得到结果都是一样的）、动态资源（每个用户访问相同的资源后，得到的结果可能不一样，动态资源被访问后，需要先转换为静态资源，再返回给浏览器）</p>
+<p>网络通信三要素：</p>
+<p>IP：电子设备（计算机）在网络中的唯一标识</p>
+<p>端口：应用程序在计算机中的唯一标识 0~65536</p>
+<p>传输协议：规定了数据传输的规则（tcp、udp）</p>
+<p>服务器：安装了服务器软件的计算机</p>
+<p>服务器软件：接收用户请求，处理请求，做出响应</p>
+<p>Web服务器软件：接收用户请求，处理请求，做出响应</p>
+<p> webLogic：oracle公司，大型的Java EE服务器，收费</p>
+<p> webSphere：IBM公司，大型的Java EE服务器，收费</p>
+<p> JBOSS：JBOSS公司，大型的Java EE服务器，收费</p>
+<p> Tomcat：Apache基金组织，中小型Java EE服务器，开源免费</p>
+<p>Servlet： server applet（运行在服务器端的小程序）Servlet就是一个接口，定义了java类被浏览器访问到（tomcat识别）的规则。</p>
+<p>快速入门：</p>
+<p>1、 创建Java EE项目</p>
+<p>2、 定义一个类实现Servlet接口，并实现接口中的所有抽象方法</p>
+<p>3、 在web.xml中配置Servlet</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line"></span><br><span class="line">&lt;servlet-name&gt; xx&lt;&#x2F;servlet-name&gt;</span><br><span class="line"></span><br><span class="line">&lt;servlet-class&gt;全限定类名&lt;&#x2F;servlet-class&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;servlet&gt;</span><br><span class="line"></span><br><span class="line">&lt;servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line"> &lt;servlet-name&gt;xx&lt;&#x2F;servlet-name&gt;</span><br><span class="line"></span><br><span class="line">&lt;url-pattern&gt;xxx&lt;&#x2F; url-pattern&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F; servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
+
+<p>执行原理:</p>
+<p>1． 当服务器接受到客户端浏览器的请求后，会解析请求url路径，获取访问的servlet资源路径</p>
+<p>2． 查找web.xml文件，是否有对应的<url-pattern>标签内容</p>
+<p>3． 如果有，则查找对应的<servlet-class>全类名</p>
+<p>4． Tomcat会将字节码文件加载进内存，并创建其对象</p>
+<p>5． 调用其方法</p>
+<p>Servlet的生命周期：<br>1.被创建：执行init方法，只执行一次</p>
+<p>Servlet什么时候被创建？</p>
+<p>默认情况下，第一次访问时，Servlet被创建</p>
+<p>可以配置Servlet的创建时机，在web.xml的<servlet>标签下配置</p>
+<p> 第一次访问时创建<load-on-startup>的值为负数</p>
+<p> 服务器启动时创建<load-on-startup>的值为0或正整数</p>
+<p>Servlet的init方法只执行一次，说明Servlet是单例的</p>
+<p>多个用户同时访问时，可能存在线程安全问题</p>
+<p>解决：尽量不要在Servlet中定义成员变量</p>
+<p>2.提供服务：执行service方法，可执行多次</p>
+<p>3.被销毁：执行destroy方法，只执行一次</p>
+<p>注解方式：</p>
+<p>可以不创建web.xml</p>
+<p>在实现Servlet的类上使用@WebServlet（urlPatterns=”资源路径”）注解进行配置</p>
+<p>Servlet体系结构：</p>
+<p>GenericServlet：抽象类，将Servlet接口中其他方法做了默认空实现</p>
+<p> HttpServlet：抽象类，对http协议的一种封装，简化操作，复写了doGet/doPost方法</p>
+<p>一个Servlet可以定义多个访问路径@WebServlet（{“/d”,”/dd”,”/ddd”}）</p>
+<p>路径定义规则:</p>
+<p> 1./xxx</p>
+<p> 2./xxx/xxx:多层路径，目录结构</p>
+<p> 3.*.do</p>
+<p>HTTP：超文本传输协议（Hyper Text Transfer Protocol）</p>
+<p>传输协议：定义了，客户端和服务器端通信时，发送数据的格式</p>
+<p>特点：</p>
+<p>1、 基于TCP/IP的高级协议</p>
+<p>2、 默认端口号：80</p>
+<p>3、 基于请求/响应模型的：一次请求对应一次响应</p>
+<p>4、 无状态的：每次请求之间相互独立，不能交互数据</p>
+<p>请求消息的数据格式：</p>
+<p>1、 请求行</p>
+<p>请求方式 请求url 请求协议/版本</p>
+<p>GET /login.html HTTP/1.1</p>
+<p>请求方式：</p>
+<p> HTTP协议中有7中请求方式，常用有2种</p>
+<p> GET:</p>
+<ol>
+<li><p>请求参数在请求行中，在url后</p>
+</li>
+<li><p>请求的url有长度限制</p>
+</li>
+<li><p>不太安全</p>
+<p>POST:</p>
+<p>1．请求参数在请求体中</p>
+<p>2．请求的url长度没有限制</p>
+<p>3．相对安全</p>
+</li>
+</ol>
+<p>2、 请求头</p>
+<p>请求名称： 请求头值</p>
+<p>常见请求头：</p>
+<p>1． User-Agent：浏览器告诉服务器，我访问你使用的浏览器版本信息</p>
+<p>2． Referer：告诉服务器，当前请求从哪里来</p>
+<p>3、 请求体（正文）</p>
+<p>4、 请求空行</p>
+<p>空行</p>
+<p>1、 request对象和response对象的原理</p>
+<ol>
+<li><p>request和response对象是由服务器创建的，我们来使用他们</p>
+</li>
+<li><p>request对象是来获取请求消息，response对象是来设置响应消息</p>
+</li>
+</ol>
+<p>2、 request对象继承体系结构</p>
+<p>ServletRequest接口——继承——HttpServletRequest接口——实现——org.apache.catalina.connector.RequestFacade类（tomcat）</p>
+<p>3、 request功能：</p>
+<p>1、 获取请求消息数据</p>
+<ol>
+<li>获取请求行数据</li>
+</ol>
+<p>1．获取请求方式：GET</p>
+<p> String getMethod()</p>
+<p>2．*获取虚拟目录：/day14</p>
+<p> String getContextPath()</p>
+<p>3．获取Servlet路径：/demo1</p>
+<p> String getServletPath()</p>
+<p>4．获取get方式请求参数：name=zhangsan</p>
+<p> String getQueryString</p>
+<p>5．*获取请求URI：/day14/demo1</p>
+<p> String getRequestURI()</p>
+<p> StringBuffer getRequestURL() <a href="http://localhost/day14/demo1" target="_blank" rel="noopener">http://localhost/day14/demo1</a></p>
+<p> URL：统一资源定位符</p>
+<p> URI：统一资源标识符（大）</p>
+<p>6．获取协议及版本：HTTP/1.1</p>
+<p> String getProtocol()</p>
+<p>7．获取客户机的IP地址：</p>
+<p> String getRemoteAddr()</p>
+<ol start="2">
+<li>获取请求头数据</li>
+</ol>
+<p>String getHear（String name）：通过请求头名称获取请求头的值</p>
+<p>Enumeration<String> getHeaderNames（）：获取所有请求头名称</p>
+<ol start="3">
+<li>获取请求体数据</li>
+</ol>
+<p>请求体：只有post请求方式才有请求体</p>
+<p>步骤：获取流对象，再从流对象中拿数据</p>
+<p>1． 获取流对象：</p>
+<p>BufferedReader getReader();获取字符输入流，只能操作字符数据</p>
+<p>ServletInputStream getInputStream();获取字节输入流，可以操作所有数据</p>
+<p> 其他功能</p>
+<ol>
+<li>获取请求参数的通用方式：</li>
+</ol>
+<p>1． String getParameter(String name)</p>
+<p>2． String[] getParameterValues(String name)</p>
+<p>3． Enumeration<String> getParameterNames();</p>
+<p>4． Map&lt;String,String[]&gt; getParameterMap();</p>
+<p>中文乱码问题：request.setCharacterEncoding(“utf-8”)</p>
+<ol start="2">
+<li><p>请求转发：一种在服务器内部的资源跳转方式</p>
+</li>
+<li><p>步骤：</p>
+</li>
+</ol>
+<p>1． 通过request对象获取请求转发器对象：RequestDispatcher getRequestDispatcher(String path)</p>
+<p>2． 使用RequestDispatcher对象来转发：forward(ServletRequest request,ServletResponse response)</p>
+<p>2．特点：</p>
+<p> 1．浏览器地址栏路径不发生变化</p>
+<p> 2．只能转发到当前服务器内部资源中</p>
+<p> 3．转发是一次请求</p>
+<ol start="3">
+<li>共享数据</li>
+</ol>
+<p>域对象：一个有作用范围的对象，可以在范围内数据共享</p>
+<p>Request域：代表一次请求的范围，一般用于请求转发的多个资源中共享数据</p>
+<p>方法：</p>
+<ol>
+<li><p>Void setAttribute(String name,Object obj);存储数据</p>
+</li>
+<li><p>Object getAttribute(String name);通过键获取值</p>
+</li>
+<li><p>Void removeAttribute(String name);通过键移除键值对</p>
+</li>
+<li><p>获取ServletContext</p>
+</li>
+</ol>
+<p>ServletContext getServletContext()</p>
+<p>BeanUtils工具类：</p>
+<p>1、 JavaBean：标准Java类</p>
+<p>1． 要求：</p>
+<p>1．类必须被public修饰</p>
+<p>2．必须提供空参构造器</p>
+<p>3．成员变量必须使用private修饰</p>
+<p>4．提供公共setter和getter方法</p>
+<p>2． 功能：封装数据</p>
+<p>2、 概念</p>
+<p>成员变量：</p>
+<p>属性：setter和getter方法截取后的产物</p>
+<p>3、 方法：</p>
+<p>1． setProperty()</p>
+<p>2． getProperty()</p>
+<p>3． Populate(Object obj , Map map)将map集合的键值对信息，封装到对应的JavaBean对象中</p>
+<p>Response对象：</p>
+<p> 功能：设置响应消息</p>
+<p>1． 设置响应行：设置状态码：setStatus（int sc）</p>
+<p>2． 设置响应头：setHearder（String name , String value）</p>
+<p>3． 设置响应体:</p>
+<ol>
+<li>获取输出流：</li>
+</ol>
+<p>字符输出流：PrintWriter getWriter（）</p>
+<p>字节输出流：ServletOutputStream getOutputStream（）</p>
+<ol start="2">
+<li>使用输出流，将数据输出到客户端浏览器</li>
+</ol>
+<p>重定向：</p>
+<p> response.setStatus(302);</p>
+<p> response.setHeader(“location”,”重定向的url”)</p>
+<p> 或</p>
+<p> response.sendRedirect(“重定向的url”);</p>
+<p> 特点：</p>
+<p>1． 地址栏发生变化</p>
+<p>2． 重定向可以访问其他站点资源</p>
+<p>3． 重定向是两次请求，不能使用request域对象来共享数据</p>
+<p>路径写法：</p>
+<p>1． 相对路径：通过相对路径不可以确定唯一资源</p>
+<p>不以/开头，以.开头路径</p>
+<p>规则：找到当前资源和目标资源的相对位置关系</p>
+<p> ./当前目录 ../后退一级目录</p>
+<p>2． 绝对路径：通过绝对路径可以确定唯一资源</p>
+<p>以/开头</p>
+<p>规则：判断定义的路径是给谁用的？</p>
+<p> 给客户端浏览器使用：需要加虚拟目录（重定向）</p>
+<p> 建议虚拟目录动态获取：request.getContextPath()</p>
+<p> 给服务器使用：不需要加虚拟目录（转发）</p>
+<p>HTTP协议：</p>
+<p> 响应消息：服务器发给客户端的数据</p>
+<p>1、 响应行</p>
+<p>组成：协议/版本 响应状态码 状态码描述</p>
+<p>响应状态码：</p>
+<p>1． 状态码都是3位数字</p>
+<p>2． 分类：</p>
+<p>1xx：服务器接收客户端消息，但没有接收完成，等待一段时间后发送1xx状态码</p>
+<p>2xx：成功，代表200</p>
+<p>3xx：重定向，代表302，304（访问缓存）</p>
+<p>4xx：客户端错误，代表404（路径没有对应资源），405（请求方式没有对应doxxx方法）</p>
+<p>5xx：服务器错误，代表500（服务器内部出现异常）</p>
+<p>2、 响应头</p>
+<p>1． 格式：头名称：值</p>
+<p>2． 常见响应头：</p>
+<p>1． Content-Type：服务器告诉客户端本次响应体数据格式以及编码格式</p>
+<p>2． Content-disposition：服务器告诉客户端以什么格式打开响应体数据</p>
+<p>默认值：in-line:默认值，在当前页面内打开</p>
+<p> attachment， filename=xxx，以附件形式打开响应体（文件下载）</p>
+<p>3．响应空行</p>
+<p> 4．响应体：传输的数据</p>
+<p> 服务器输出字符数据到浏览器</p>
+<p> 步骤：</p>
+<ol>
+<li><p>获取字符输出流</p>
+</li>
+<li><p>输出数据</p>
+</li>
+</ol>
+<p>乱码问题：</p>
+<p>设置流的默认编码、告诉浏览器响应体使用的编码。response.setContentType(“text/html ; charset=utf-8”)</p>
+<p> 服务器输出字符数据到浏览器</p>
+<p> 步骤：</p>
+<ol>
+<li><p>获取字节输出流</p>
+</li>
+<li><p>输出数据</p>
+</li>
+</ol>
+<p>ServletContext对象</p>
+<p> 概念：代表整个web应用，可以和程序的容器（服务器）来通信</p>
+<p> 获取：</p>
+<p>1． 通过request对象获取</p>
+<p>request.getServletContext()</p>
+<p>2． 通过HttpServlet获取</p>
+<p>this.getServletContext()</p>
+<p> 功能：</p>
+<p>1． 获取MIME类型</p>
+<p>MIME类型：在互联网通信过程中定义的一种文件数据类型</p>
+<p>格式： 大类型/小类型 text/html image/jpeg</p>
+<p>获取：String getMimeType(String file)</p>
+<p>2． 域对象：共享数据</p>
+<p>ServletContext对象范围：所有用户请求的数据</p>
+<p>3． 获取文件的真实（服务器）路径</p>
+<p>方法：String getRealPath（String path）</p>
+<p>会话技术：</p>
+<p>1． Cookie</p>
+<p>2． Session</p>
+<p>会话：一次会话中包含多次请求和响应</p>
+<p>功能：在一次会话的范围内的多次请求间，共享数据</p>
+<p>3． 方式</p>
+<p>1． 客户端会话技术：Cookie</p>
+<p>2． 服务器端会话技术：Session</p>
+<p>Cookie：</p>
+<ol>
+<li>创建Cookie对象，绑定数据</li>
+</ol>
+<p>new Cookie（String name，String value）</p>
+<ol start="2">
+<li>发送Cookie对象</li>
+</ol>
+<p>response.addCookie（Cookie cookie）</p>
+<ol start="3">
+<li>获取Cookie对象，拿到数据</li>
+</ol>
+<p>Cookie[ ] request.getCookies（）</p>
+<p> 实现原理：基于响应头set-cookie和请求头cookie实现</p>
+<p>Cookie的细节</p>
+<p>1． 一次可以发送多个cookie。</p>
+<p>2． Cookie在默认情况下，当浏览器关闭，Cookie数据被销毁。</p>
+<p>3． 持久化存储：setMaxAge（int second）正数：将cookie数据写到硬盘文件中，持久存储。负数：默认值。零：删除cookie信息。</p>
+<p>4． 在tomcat 8之前cookie不支持存储中文数据，需要将中文数据转码。</p>
+<p>5． 默认情况下在同一个服务器中cookie不能在多个web项目里共享。setPath（String path）默认情况下，设置当前虚拟目录，如果要共享将path设置成/即可。</p>
+<p>6． 不同的tomcat服务器cookie共享setDomain（String path）如果设置一级域名相同，那么多个服务器间cookie可以共享。</p>
+<p>Cookie特点：</p>
+<p>1． Cookie存储数据在客户端浏览器</p>
+<p>2． 浏览器对单个cookie的大小有限制（4kb）同一个域名下的cookie也有限制（20个）</p>
+<p>作用：</p>
+<p>Cookie一般用于存储少量不太敏感的数据</p>
+<p>在不登录的情况下，完成服务器对客户端的身份识别</p>
+<p>Session：</p>
+<p>概念：服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器对象中HttpSession</p>
+<p>快速入门：</p>
+<ol>
+<li>获取HttpSession对象</li>
+</ol>
+<p>HttpSession session = request.getSession()</p>
+<ol start="2">
+<li>使用HttpSession对象</li>
+</ol>
+<p>Object getAttribute(String name)</p>
+<p>Void setAttribute(String name , Object value)</p>
+<p>Void removeAttribute(String name)</p>
+<p> 原理：Session的实现是依赖于Cookie</p>
+<p> 细节：</p>
+<ol>
+<li>客户端关闭，服务器不关闭，两次获取的session不是同一个。如果需要相同 可以创建cookie，键为JSESSIONID，并设置最大存活时间，让cokie持久化保存。</li>
+</ol>
+<p>2．客户端不关闭，服务器关闭，两次获取的session不是同一个</p>
+<p>Session的钝化：在服务器正常关闭前，将session对象序列化到硬盘上</p>
+<p>Session的活化：在服务器启动后，将session文件转化为内存中的session对象</p>
+<p>3． Session的销毁时间</p>
+<p>1． 服务器关闭</p>
+<p>2． Session对象调用invalidate()</p>
+<p>3． 默认失效时间：30分钟</p>
+<p>Session特点：</p>
+<p>1． Session用于存储一次会话的多次请求的数据，存在服务器端</p>
+<p>2． Session可以存储任意类型，任意大小的数据</p>
+<p>三层架构：</p>
+<p>1． 界面层（表示层）：用户可以通过界面上的组件和服务器进行交互 web层</p>
+<p>2． 业务逻辑层：处理业务逻辑的 service层        </p>
+<p>3． 数据访问层：操作数据存储文件 dao层</p>
+<p>Filter：过滤器</p>
+<p> 过滤器作用：一般用于完成通用的操作：如，登录验证，编码处理</p>
+<p>快速入门：</p>
+<p>1． 步骤</p>
+<p>1． 定义一个类，实现Filter接口</p>
+<p>2． 实现接口的抽象方法</p>
+<p>3． 配置拦截路径，<a href="mailto:web.xml%E6%88%96%E6%B3%A8%E8%A7%A3@WebFilter%EF%BC%88">web.xml或注解@WebFilter（”/</a>路径”）</p>
+<p>过滤器细节：</p>
+<p>1． web.xml配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line"></span><br><span class="line"> &lt;filter-name&gt;xx&lt;&#x2F;filter-name&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;filter&gt;</span><br><span class="line"></span><br><span class="line"> &lt;filter-mapping&gt;</span><br><span class="line"></span><br><span class="line"> &lt;filter-name&gt;xx&lt;&#x2F;filter-name&gt;</span><br><span class="line"></span><br><span class="line"> &lt;url-pattern&gt;&#x2F;url&lt;&#x2F;url-pattern&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2． 过滤器执行流程     </p>
+<p>3． 过滤器生命周期方法</p>
+<p>1． init：在服务器启动后创建Filter对象，然后调用init方法只执行一次，用于加载资源</p>
+<p>2． doFilter：每一次请求被拦截资源时，会执行，可执行多次。</p>
+<p>3． destroy：在服务器关闭后，Filter对象被销毁，如果服务器正常关闭会执行destroy方法，只执行一次，用于释放资源。</p>
+<p>4．过滤器配置详解</p>
+<p>1． 具体资源路径：/index.html</p>
+<p>2． 拦截目录：/user/* 访问/user下所有资源时，过滤器都会被执行</p>
+<p>3． 后缀名拦截：*.html 访问所有后缀名为html资源时，过滤器都会被执行</p>
+<p>4． 拦截所有资源：/* 访问所有资源，过滤器都会被执行</p>
+<p>拦截方式配置：</p>
+<p>注解：</p>
+<p> 设置dispatcherTypes</p>
+<ol>
+<li><p>REQUEST：默认值，浏览器直接请求资源</p>
+</li>
+<li><p>FORWARD：转发访问资源</p>
+</li>
+<li><p>INCLUDE：包含访问资源</p>
+</li>
+<li><p>ERROR：错误跳转资源</p>
+</li>
+<li><p>ASYNC：异步访问资源</p>
+</li>
+</ol>
+<p>web.xml配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dispatcher&gt;&lt;&#x2F;dispatcher&gt;</span><br></pre></td></tr></table></figure>
+
+<p>5．过滤器链（配置多个过滤器）</p>
+<p>执行顺序：过滤器a，b</p>
+<p>过滤器a，过滤器b，资源执行，过滤器b，过滤器a</p>
+<p>过滤器先后顺序问题：</p>
+<p>1． 注解配置</p>
+<p>按照类名的字符串比较规则，值小的先执行</p>
+<p>2． web.xml配置： <filter-mapping>谁定义在上边，谁先执行</p>
+<p>放行：.doFilter(servletRequest  request,servletReponse  response)</p>
+<p>代理模式：</p>
+<p> 静态代理：有一个类文件描述代理模式</p>
+<p> 动态代理：在内存中形成代理类</p>
+<p>Listener：监听器</p>
+<p> 概念：web的三大组件之一</p>
+<p> 事件监听机制：</p>
+<p> 事件：一件事情</p>
+<p> 事件源：事件发生的地方</p>
+<p> 监听器：一个对象</p>
+<p> 注册监听：将事件、事件源、监听器绑定在一起，当事件源上发生某个事件后，执 行监听器代码</p>
+<p> ServletContextListener：监听ServletContext对象的创建和销毁</p>
+<p> Void contextDestroyed（ServletContextEvent sce）ServletContext对象被销毁前会 调用该方法</p>
+<p> Void contexInitialized（ServletContextEvent sce）ServletContext对象被创建后会 调用该方法</p>
+<p>步骤</p>
+<p> 定义一个类，实现ServletContextListener接口</p>
+<p> 实现抽象方法</p>
+<p> 配置</p>
+<p> 1．web.xml<br> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;listener&gt;        </span><br><span class="line"></span><br><span class="line">&lt;listener-class&gt;类全限定名 &lt;&#x2F;listener-class&gt;</span><br><span class="line"></span><br><span class="line">&lt;listener&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  2．注解</p>
+<p> @WebListener（）</p>
+]]></content>
+      <categories>
+        <category>技术类</category>
+      </categories>
+      <tags>
+        <tag>基础</tag>
+        <tag>笔记</tag>
+        <tag>Java Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis基础（待续）</title>
     <url>/2020/06/26/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BE%85%E7%BB%AD%EF%BC%89/</url>
     <content><![CDATA[<p>NoSQL（Not Only SQL）不仅仅是SQL，泛指非关系型数据库。</p>
 <p>NoSQL不依赖业务逻辑方式存储，而是以简单的key-value模式存储，因此大大增加了数据库的扩展能力</p>
@@ -98,7 +542,7 @@
       </tags>
   </entry>
   <entry>
-    <title>数据结构笔记（待续）</title>
+    <title>数据结构基础（待续）</title>
     <url>/2020/06/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>程序=数据结构+算法</p>
 <p>数据结构是算法的基础</p>
@@ -167,7 +611,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Spring框架学习笔记</title>
+    <title>Spring框架笔记</title>
     <url>/2020/06/18/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>Spring优势：1、方便解耦，简化开发。2、AOP编程支持。3、声明式事务支持。4、方便程序测试。5、方便集成各种优秀框架。6、降低JAVA EE API的使用难度。7、源码是经典学习范例。</p>
 <p><img src="https://i.loli.net/2020/06/18/6iDxklsZnSCJpTj.png" alt="1.png"></p>
@@ -332,13 +776,13 @@
         <category>技术类</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
         <tag>笔记</tag>
+        <tag>JAVA</tag>
         <tag>框架</tag>
       </tags>
   </entry>
   <entry>
-    <title>JAVA多线程笔记</title>
+    <title>Java多线程基础</title>
     <url>/2020/06/18/JAVA%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>线程的生命周期：</p>
 <p><img src="https://i.loli.net/2020/06/18/2KfBTbIHuWpYMA5.png" alt="1.png"></p>
@@ -400,12 +844,12 @@
       </categories>
       <tags>
         <tag>基础</tag>
-        <tag>JAVA</tag>
         <tag>笔记</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
-    <title>JAVA基础笔记</title>
+    <title>Java基础</title>
     <url>/2020/06/12/JAVA%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>面向对象是向现实世界模型的自然延伸，这是一种“万物皆对象”的编程思想。在现实生活中的任何物体都可以归为一类事物，而每一个个体都是一类事物的实例。</p>
 <p>Arraylist是可以扩展长度的数组，声明时必须跟上泛型，泛型的内容为引用类型，不能是基本类型。如果需要基本类型，可以用其包装类，int-&gt;Integer，char-&gt;Character。</p>
@@ -439,7 +883,7 @@
 <p>HashSet特点：是一个无序集合，底层是一个哈希表结构（数组+链表/红黑树）（查询很快）。LinkHashSet，底层是哈希表，多了一条链表（记录元素存储顺序）保证元素有序。</p>
 <p>哈希值：是一个十进制整数，由系统随机给出（是一个逻辑地址，不是实际物理地址）</p>
 <p>可变参数：实际就是传递数组，格式：方法名（数据类型…变量名）1、一个方法的参数列表可变参数只能有一个。2、如果方法的参数有多个，那么可变参数要写在末尾。</p>
-<p>Map集合：1、K允许重复V可以重复。2、K,V一一对应</p>
+<p>Map集合：1、K不允许重复V可以重复。2、K,V一一对应</p>
 <p>HashMap是一个无序集合，存入和取出的顺序有可能不一致。</p>
 <p>LinkedHashMap底层是哈希表+链表，存储和取出元素的顺序是一样的。</p>
 <p>HashTable是线程安全的，只能存在非null的键或值</p>
@@ -512,7 +956,7 @@
 <p>@Doucumented：描述注解是否被抽取到api文档中</p>
 <p>@Inherited：描述注解是否被子类继承</p>
 <p> public @interface 注解名称{ }</p>
-<p> 本质：注解本质上就是一个接口，改接口默认继续Annotation接口</p>
+<p> 本质：注解本质上就是一个接口，该接口默认继承Annotation接口</p>
 <p> 属性：接口中可以定义的成员方法</p>
 <p> 要求属性的返回值类型：</p>
 <p>1、 基本类型</p>
@@ -526,8 +970,8 @@
       </categories>
       <tags>
         <tag>基础</tag>
-        <tag>JAVA</tag>
         <tag>笔记</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
